@@ -1,0 +1,566 @@
+/* ===== RESET Y BASE ===== */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: rgb(241, 245, 195);
+    margin: 0;
+    padding: 20px 0;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container {
+    position: relative;
+    margin-top: 50px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.container.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* ===== TÍTULOS ===== */
+.title {
+    font-family: cursive;
+    font-style: italic;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: -35px;
+    flex-direction: column;
+}
+
+.date {
+    display: flex;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* ===== FOTO ===== */
+.photo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 20px 0;
+    padding: 10px;
+    opacity: 0;
+}
+
+.photo-section.section1 {
+    animation: aparici 2.5s ease-out both 1;
+}
+
+.photo-section.section2 {
+    animation: aparici 1.5s ease-out both 1;
+}
+
+@keyframes aparici {
+    100% {
+        opacity: 1;
+    }
+}
+
+.photo-frame {
+    background: #ffffff;
+    padding: 18px 18px 25px 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    transform: rotate(-6deg);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.photo-frame .unica {
+    display: block;
+    width: 260px;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #e8e8e8;
+    border-radius: 1px;
+}
+
+.photo-caption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2px;
+    margin-bottom: -20px;
+    gap: 12px;
+    justify-content: center;
+}
+
+.photo-caption img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+}
+
+.photo-caption img:nth-child(2) {
+    width: 85px;
+    height: 75px;
+}
+
+/* ===== SEPARADOR ===== */
+.separa {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -110px;
+}
+
+.separa img {
+    width: 100px;
+    height: 45px;
+    display: block;
+}
+
+/* ===== VALENTINES (SOBRE) ===== */
+.valentines {
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite 1;
+    margin-top: 100px;
+}
+
+@keyframes up {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 30px;
+    background-color: #dce587;
+    padding-top: 170px;
+    z-index: 0;
+}
+
+/* ===== CARTA ===== */
+.text {
+    position: absolute;
+    font-family: Cormorant Garamond;
+    font-size: 15px;
+    text-align: left;
+    line-height: 25px;
+    left: 35px;
+    top: 10px;
+    color: #000000;
+    z-index: 99;
+    opacity: 0%;
+}
+
+.subBox {
+    position: relative;
+    display: flex;
+    font-size: 20px;
+    margin-bottom: -10px;
+    margin-left: 70px;
+}
+
+.text p:nth-child(3) {
+    margin-top: -10px;
+    margin-bottom: 25px;
+    display: flex;
+    margin-left: 20px;
+}
+
+.textfin {
+    position: absolute;
+    text-align: center;
+    font-size: 18px;
+    color: #b63434;
+    left: 15px;
+    line-height: 20px;
+}
+
+/* ===== FRENTE DEL SOBRE ===== */
+.front {
+    position: absolute;
+    border-right: 180px solid #d8e091;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left: 120px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    z-index: 10;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.front::before {
+    position: absolute;
+    content: "";
+    border-left: 300px solid #d5df7e;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+    width: 0;
+    height: 0;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* ===== BOTÓN SELLO ===== */
+.boton {
+    margin-top: -150px;
+    margin-left: 90px;
+    position: absolute;
+    z-index: 9999;
+}
+
+.boton img {
+    width: 110px;
+    height: 90px;
+}
+
+.sepatext p {
+    font-style: italic;
+    margin-top: -55px;
+    z-index: 9999;
+    position: absolute;
+    margin-left: 65px;
+    color: rgb(233, 96, 72);
+}
+
+/* ===== FINISHED (PARTE FINAL) ===== */
+.finished {
+    display: none;
+    opacity: 0;
+}
+
+.finished1 {
+    display: block;
+    animation: construir 1.5s ease-out both 1;
+}
+
+@keyframes construir {
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+}
+
+.page img {
+    margin-top: 70px;
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+.page img:first-child {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: juntar;
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+}
+
+@keyframes juntar {
+    100% {
+        margin-right: -61px;
+    }
+}
+
+.boxLuz img {
+    margin-top: -70px;
+    margin-left: 115px;
+    margin-bottom: 0px;
+    display: block;
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: mostar;
+    animation-range: entry 50% cover 55%;
+    animation-fill-mode: both;
+}
+
+@keyframes mostar {
+    55% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.pagetext {
+    color: rgb(54, 47, 45);
+    font-style: italic;
+    text-align: center;
+    opacity: 0;
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: enseñar;
+    animation-range: entry 80% cover 90%;
+    animation-fill-mode: both;
+}
+
+@keyframes enseñar {
+    100% {
+        opacity: 1;
+    }
+}
+
+.pagetext img {
+    position: absolute;
+    display: block;
+    width: 260px;
+    height: 300px;
+    object-fit: cover;
+    margin-left: 20px;
+}
+
+/* ===== DESPEDIDA ===== */
+.despe {
+    font-size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: absolute;
+    color: #858383;
+    margin-left: 80px;
+    margin-top: 80px;
+    padding-bottom: 20px;
+}
+
+.despe1 {
+    animation: down 1.5s ease-out both 1;
+}
+
+@keyframes down {
+    100% {
+        margin-top: 320px;
+    }
+}
+
+/* ============================================
+   ANIMACIONES DEL SOBRE AL HACER CLIC
+   ============================================ */
+.envelope1 {
+    animation: carta 1s ease-out both 1;
+}
+
+@keyframes carta {
+    100% {
+        height: 355px;
+    }
+}
+
+.heart1 {
+    animation: heartle 2s ease-out both 1;
+}
+
+@keyframes heartle {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+.front1 {
+    animation: front1 1s ease-out both 1;
+}
+
+@keyframes front1 {
+    100% {
+        top: 330px;
+    }
+}
+
+.front1::before {
+    animation: fonte 1s ease-out both 1;
+}
+
+@keyframes fonte {
+    100% {
+        top: -95px;
+    }
+}
+
+.text1 {
+    animation: mostrar 1.5s ease-out both 1;
+}
+
+@keyframes mostrar {
+    100% {
+        opacity: 100%;
+        top: 0px;
+    }
+}
+
+.boton1 {
+    animation: Nshow 1s ease-out both 1;
+}
+
+.sepatext1 {
+    animation: Nshow 1s ease-out both 1;
+}
+
+@keyframes Nshow {
+    100% {
+        opacity: 0%;
+    }
+}
+
+/* ============================================
+   PRELOADER
+   ============================================ */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 9999999;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.loading-text {
+    font-family: 'Cormorant Garamond', cursive;
+    font-size: 32px;
+    font-weight: bold;
+    color: #b63434;
+    letter-spacing: 2px;
+}
+
+.loading-progress {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    color: #666;
+}
+
+.heart-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 10;
+    margin-top: 20px;
+}
+
+#heartClick {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    pointer-events: auto;
+}
+
+#heartClick:hover {
+    transform: scale(1.1);
+}
+
+#heartClick:active {
+    transform: scale(0.9);
+}
+
+.progress-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.progress-circle svg {
+    width: 120px;
+    height: 120px;
+    transform: rotate(-90deg);
+    pointer-events: none;
+}
+
+.progress-bg {
+    fill: none;
+    stroke: #f0f0f0;
+    stroke-width: 8;
+}
+
+.progress-fill {
+    fill: none;
+    stroke: #b63434;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 282.7;
+    stroke-dashoffset: 282.7;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #b63434;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 600px) {
+    .photo-frame .unica {
+        width: 200px;
+        height: 240px;
+    }
+
+    .photo-frame {
+        padding: 12px 12px 18px 12px;
+        transform: rotate(-4deg);
+    }
+}
