@@ -70,7 +70,7 @@ body {
 
 .photo-frame {
     background: #ffffff;
-    padding: 18px 18px 25px 18px;
+    padding: 18px 18px 18px 18px;
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
     transform: rotate(-6deg);
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -80,7 +80,7 @@ body {
 
 .photo-frame .unica {
     display: block;
-    width: 260px;
+    width: 350px;
     height: 300px;
     object-fit: cover;
     border: 1px solid #e8e8e8;
@@ -555,7 +555,7 @@ body {
    ============================================ */
 @media (max-width: 600px) {
     .photo-frame .unica {
-        width: 200px;
+        width: 225px;
         height: 240px;
     }
 
