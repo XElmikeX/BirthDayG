@@ -553,7 +553,7 @@ body {
 /* ============================================
    RESPONSIVE
    ============================================ */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .photo-frame .unica {
         width: 225px;
         height: 240px;
