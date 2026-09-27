@@ -563,4 +563,7 @@ body {
         padding: 12px 12px 18px 12px;
         transform: rotate(-4deg);
     }
+    .textfin { 
+        left: 10px;
+    }
 }
