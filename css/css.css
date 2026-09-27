@@ -564,6 +564,6 @@ body {
         transform: rotate(-4deg);
     }
     .textfin { 
-        left: 10px;
+        margin-left: -5px;
     }
 }
